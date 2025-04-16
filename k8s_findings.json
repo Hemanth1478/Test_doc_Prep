@@ -1,0 +1,48 @@
+{
+  "scanner": "Kubescape",
+  "cluster_name": "minikube",
+  "timestamp": "2025-04-16T15:32:10Z",
+  "results": [
+    {
+      "controlID": "C-001",
+      "controlName": "Privileged Containers",
+      "severity": "Critical",
+      "description": "Containers should not run with privileged mode.",
+      "resource": {
+        "kind": "Pod",
+        "name": "nginx-pod",
+        "namespace": "default"
+      },
+      "status": "failed"
+    },
+    {
+      "controlID": "C-002",
+      "controlName": "Run as Non-Root",
+      "severity": "High",
+      "description": "Containers should be configured to run as a non-root user.",
+      "resource": {
+        "kind": "Deployment",
+        "name": "my-app-deployment",
+        "namespace": "prod"
+      },
+      "status": "failed"
+    },
+    {
+      "controlID": "C-003",
+      "controlName": "Service Account Use",
+      "severity": "Medium",
+      "description": "Avoid using default service accounts.",
+      "resource": {
+        "kind": "ServiceAccount",
+        "name": "default",
+        "namespace": "kube-system"
+      },
+      "status": "passed"
+    }
+  ],
+  "summary": {
+    "totalControls": 3,
+    "failed": 2,
+    "passed": 1
+  }
+}
